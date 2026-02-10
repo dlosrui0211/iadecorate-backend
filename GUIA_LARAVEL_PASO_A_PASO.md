@@ -171,25 +171,25 @@ php artisan make:model Mensaje
 
 ```bash
 # Controlador de autenticación
-php artisan make:controller Api/AuthController
+php artisan make:controller Http/Controllers/AuthController
 
 # Controlador de productos
-php artisan make:controller Api/ProductoController --api
+php artisan make:controller Http/Controllers/ProductoController --api
 
 # Controlador de carrito
-php artisan make:controller Api/CarritoController --api
+php artisan make:controller Http/Controllers/CarritoController --api
 
 # Controlador de pedidos
-php artisan make:controller Api/PedidoController --api
+php artisan make:controller Http/Controllers/PedidoController --api
 
 # Controlador de usuarios (admin)
-php artisan make:controller Api/UsuarioController --api
+php artisan make:controller Http/Controllers/UsuarioController --api
 
 # Controlador de incidencias
-php artisan make:controller Api/IncidenciaController --api
+php artisan make:controller Http/Controllers/IncidenciaController --api
 
 # Controlador de mensajes
-php artisan make:controller Api/MensajeController --api
+php artisan make:controller Http/Controllers/MensajeController --api
 ```
 
 ---
