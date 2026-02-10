@@ -8,7 +8,7 @@ Antes de empezar, asegúrate de tener instalado:
 
 - ✅ **PHP 8.1 o superior**
 - ✅ **Composer** (gestor de dependencias de PHP)
-- ✅ **MySQL 8.0** o **MariaDB**
+- ✅ **MySQL 8.0** o **MariaDB** o **PHPMYADMIN**
 - ✅ **Node.js y NPM** (opcional, para compilar assets)
 
 #### Verificar instalaciones:
@@ -16,7 +16,6 @@ Antes de empezar, asegúrate de tener instalado:
 ```bash
 php -v          # Debe mostrar PHP 8.1 o superior
 composer -v     # Debe mostrar Composer instalado
-mysql --version # Debe mostrar MySQL
 ```
 
 ---
@@ -46,24 +45,9 @@ laravel new ia-decorate-backend
 cd ia-decorate-backend
 ```
 
----
+--
 
-## 3️⃣ Configurar Base de Datos
-
-### Paso 3.1: Crear la base de datos
-
-```bash
-# Entrar a MySQL
-mysql -u root -p
-
-# Crear base de datos
-CREATE DATABASE ia_decorate CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Salir
-exit;
-```
-
-### Paso 3.2: Configurar archivo .env
+### Paso 3: Configurar archivo .env
 
 Edita el archivo `.env` en la raíz del proyecto:
 
