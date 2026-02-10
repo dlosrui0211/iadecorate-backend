@@ -5,7 +5,7 @@ Backend completo para la plataforma IA Decorate desarrollado con Spring Boot 3.2
 ## 📋 Características
 
 - ✅ Autenticación y autorización con JWT
-- ✅ Gestión de usuarios con roles (USER, ADMIN)
+- ✅ Gestión de usuarios con roles (USER, ADMIN) 
 - ✅ CRUD completo de productos
 - ✅ Gestión de carrito de compras
 - ✅ Sistema de pedidos
