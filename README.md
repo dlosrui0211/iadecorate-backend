@@ -20,7 +20,7 @@ Backend API RESTful para la plataforma IA Decorate desarrollado con Laravel 10 y
 
 - **Laravel 10**
 - **PHP 8.1+**
-- **MySQL 8.0**
+- **XAMPP**
 - **JWT Auth (tymon/jwt-auth)**
 - **Composer**
 
@@ -32,7 +32,7 @@ Backend API RESTful para la plataforma IA Decorate desarrollado con Laravel 10 y
 # Verificar versiones
 php -v        # Debe ser 8.1 o superior
 composer -v   # Composer instalado
-mysql --version # MySQL instalado
+npm -v #npm instalado para el vite
 ```
 
 ### 2. Clonar o Crear Proyecto
@@ -342,7 +342,7 @@ ia-decorate-laravel/
 └── README.md
 ```
 
-## 🧪 Probar la API
+## 🧪 Probar la API (ESTO SE HARÁ MAS ADELANTE, VAMOS POR LO ANTERIOR QUE ES LO ESENCIAL)
 
 ### Con cURL:
 
