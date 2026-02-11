@@ -9,7 +9,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* ===========================
+       IA DECORATE - COLORES PERSONALIZADOS
+       Color Principal: #EED09D
+       =========================== */
+
+    --color-primary: #EED09D;
+    --color-primary-dark: #E0C080;
+    --color-text-dark: #1a1a1a;
+    --color-text-light: #666;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -23,21 +33,23 @@
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
 
-    --color-accent: var(--color-neutral-800);
-    --color-accent-content: var(--color-neutral-800);
-    --color-accent-foreground: var(--color-white);
+    --color-accent: #EED09D;
+    --color-accent-content: #1a1a1a;
+    --color-accent-foreground: #1a1a1a;
+
+    --radius-default: 25px;
+    --radius-lg: 50px;
 }
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-white);
-        --color-accent-content: var(--color-white);
-        --color-accent-foreground: var(--color-neutral-800);
+        --color-accent: #EED09D;
+        --color-accent-content: #1a1a1a;
+        --color-accent-foreground: #ffffff;
     }
 }
 
 @layer base {
-
     *,
     ::after,
     ::before,
@@ -45,22 +57,208 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
+    body {
+        @apply bg-gray-100;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color-text-dark);
+    }
 }
+
+/* ===========================
+   FLUX UI - CAMPOS DE FORMULARIO
+   =========================== */
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {
     @apply grid gap-2;
 }
 
 [data-flux-label] {
-    @apply  !mb-0 !leading-tight;
+    @apply !mb-3 !leading-tight font-bold text-base;
+    color: var(--color-text-dark);
 }
 
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+    @apply outline-hidden ring-2;
+    ring-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+    background-color: #ffffff;
 }
 
-/* \[:where(&)\]:size-4 {
-    @apply size-4;
-} */
+input[data-flux-control],
+textarea[data-flux-control],
+select[data-flux-control] {
+    border-radius: 25px;
+    padding: 15px 20px;
+    border: none;
+    background-color: #ffffff;
+    color: var(--color-text-dark);
+    font-size: 14px;
+}
+
+input[data-flux-control]::placeholder,
+textarea[data-flux-control]::placeholder {
+    color: #999;
+}
+
+/* ===========================
+   AUTH LAYOUT - PÁGINA DE LOGIN
+   =========================== */
+
+@layer components {
+    /* Contenedor principal de autenticación */
+    [data-flux-container] {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #EED09D 0%, #E0C080 100%);
+        padding: 20px;
+    }
+
+    /* Card de autenticación */
+    .auth-card,
+    [data-flux-card] {
+        background-color: #EED09D;
+        border-radius: 50px;
+        padding: 60px 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Botones primarios */
+    button[data-flux-button][variant="primary"],
+    .btn-auth-primary {
+        @apply w-full font-bold;
+        background-color: #ffffff;
+        color: var(--color-text-dark);
+        border-radius: 25px;
+        padding: 16px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    button[data-flux-button][variant="primary"]:hover,
+    .btn-auth-primary:hover {
+        background-color: #f9f9f9;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enlaces */
+    a[data-flux-link] {
+        color: var(--color-text-dark);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    a[data-flux-link]:hover {
+        text-decoration: underline;
+    }
+
+    /* Títulos de auth */
+    .auth-title {
+        font-size: 32px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--color-text-dark);
+        letter-spacing: -1px;
+    }
+
+    /* Texto descriptivo */
+    .text-zinc-600 {
+        color: var(--color-text-light);
+    }
+}
+
+/* ===========================
+   ANIMACIONES
+   =========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===========================
+   VALIDACIÓN DE FORMULARIOS
+   =========================== */
+
+@layer components {
+    .form-control.is-invalid,
+    input[data-flux-control].is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    .invalid-feedback {
+        display: block;
+        color: #dc3545;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 576px) {
+    .auth-card,
+    [data-flux-card] {
+        padding: 40px 25px;
+    }
+
+    .auth-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+    }
+
+    input[data-flux-control],
+    textarea[data-flux-control],
+    select[data-flux-control] {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    button[data-flux-button][variant="primary"],
+    .btn-auth-primary {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+}
+
+/* ===========================
+   SPINNER
+   =========================== */
+
+.spinner-small {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-text-dark);
+    animation: spin 0.8s linear infinite;
+}

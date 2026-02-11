@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('dashboard');
+})->middleware(['auth']);
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
