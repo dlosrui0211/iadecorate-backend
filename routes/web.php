@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard');
-})->middleware(['auth']);
+})->middleware(['auth', 'verified'])
+->name('dashboard');
 
 
 Route::view('dashboard', 'dashboard')
