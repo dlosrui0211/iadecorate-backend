@@ -32,25 +32,21 @@
                     viewable
                 />
 
-                @if (Route::has('password.request'))
-                    <flux:link class="absolute top-0 text-sm end-0" :href="route('password.request')" wire:navigate>
-                        {{ __('¿Olvidaste tu contraseña?') }}
-                    </flux:link>
-                @endif
             </div>
 
             <div class="flex items-center justify-end">
-                <flux:button variant="primary" type="submit" class="w-full text-black" data-test="login-button" style="background-color: #FFFFFF">
+                <flux:button variant="primary" type="submit" class="w-full text-black cursor-pointer" data-test="login-button" style="background-color: #FFFFFF">
                     {{ __('Log in') }}
                 </flux:button>
             </div>
         </form>
 
-        @if (Route::has('register'))
-            <div class="space-x-1 text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
-                <span>{{ __('¿No tienes cuenta?') }}</span>
-                <flux:link :href="route('register')" wire:navigate>{{ __('Regístrate aquí') }}</flux:link>
-            </div>
+        @if (Route::has('password.request') && Route::has('register'))
+        <div class="space-x-1 text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
+            <flux:link :href="route('password.request')" wire:navigate> {{ __('¿Olvidaste tu contraseña?') }}</flux:link>
+            <flux:link :href="route('register')" wire:navigate>{{ __('Regístrate aquí') }}</flux:link>
+
+        </div>
         @endif
     </div>
 </x-layouts::auth>
