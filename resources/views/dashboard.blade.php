@@ -1,18 +1,45 @@
-<x-layouts::app :title="__('Dashboard')">
-    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
+<x-layouts::app title="IA Decorate - Inicio">
+    <div class="content-section">
+        <!-- Imagen Izquierda -->
+        <div class="placeholder-box">
+            Aquí iría<br>
+            La imagen del sitio<br>
+            interactivo
         </div>
-        <div class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
+
+        <!-- Contenido Centro -->
+        <div class="content-text">
+            <p>
+                Lorem Ipsum is a type of placeholder text commonly used in design, publishing, and web development.
+                Its origins can be traced back to a scrambled section of "De Finibus Bonorum et Malorum," a work
+                by Cicero written in 45 BC. It allows designers to present visual elements without the need for
+                meaningful content. Additionally, various online generators can create "Lorem Ipsum" text for use in projects.
+            </p>
+            <p style="margin-top: 20px;">
+                Lorem Ipsum is a type of placeholder text commonly used in design, publishing, and web development.
+                Its origins can be traced back to a scrambled section of "De Finibus Bonorum et Malorum," a work
+                by Cicero written in 45 BC. It allows designers to present visual elements without the need for
+                meaningful content. Additionally, various online generators can create "Lorem Ipsum" text for use in projects.
+            </p>
+            <p>
+                Lorem Ipsum is a type of placeholder text commonly used in design, publishing, and web development.
+                Its origins can be traced back to a scrambled section of "De Finibus Bonorum et Malorum," a work
+                by Cicero written in 45 BC. It allows designers to present visual elements without the need for
+                meaningful content. Additionally, various online generators can create "Lorem Ipsum" text for use in projects.
+            </p>
+            <p>
+                Lorem Ipsum is a type of placeholder text commonly used in design, publishing, and web development.
+                Its origins can be traced back to a scrambled section of "De Finibus Bonorum et Malorum," a work
+                by Cicero written in 45 BC. It allows designers to present visual elements without the need for
+                meaningful content. Additionally, various online generators can create "Lorem Ipsum" text for use in projects.
+            </p>
+        </div>
+
+        <!-- Imagen Derecha -->
+        <div class="placeholder-box">
+            Aquí iría<br>
+            publicidad<br>
+            inmobiliaria
         </div>
     </div>
 </x-layouts::app>
